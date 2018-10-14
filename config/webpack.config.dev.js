@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const webpack = require('webpack');
@@ -65,6 +65,10 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
   }
   return loaders;
 };
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -138,9 +142,17 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.ts', '.ts', '.web.tsx', '.tsx', '.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
+      'ROOT': resolve('/'),
+      'SRC': resolve('src'),
+      'API': resolve('src/api'),
+      'IMG': resolve('src/assets/img'),
+      'SCSS': resolve('src/assets/scss'),
+      'JSS': resolve('src/assets/jss'),
+      'UTIL': resolve('src/utils'),
+      'VIEW': resolve('src/views'),
+      'STORE': resolve('src/store'),
+      'ROUTER': resolve('src/routers'),
+      'CMP': resolve('src/components')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

@@ -17,7 +17,18 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths":{
+      "SRC/*":["src/*"],
+      "ROUTER/*":["src/routers/*"],
+      "IMG/*":["src/assets/img/*"],
+      "SASS/*":["src/assets/scss/*"],
+      "JSS/*":["src/assets/jss/*"],
+      "STORE/*": ["src/store/*"],
+      "API":["src/api"],
+      "VIEW/*":["src/views/*"],
+      "CMP/*":["src/components/*"]
+    }
   },
   "exclude": [
     "node_modules",
